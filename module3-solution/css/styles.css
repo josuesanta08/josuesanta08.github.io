@@ -1,0 +1,13 @@
+.main-container {
+	padding-top: 50px;
+}
+
+.navbar-default {
+	position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.inside {
+	background-color: gray;
+}
