@@ -8,21 +8,20 @@
 
   ToBuyController.$inject = ['$scope', 'ShoppingListCheckOffService'];
   function ToBuyController($scope, ShoppingListCheckOffService) {
-    $scope.message = "";
+    $scope.to_buy = ShoppingListCheckOffService.to_buy;
 
     $scope.checkLunch = function () {
-      if($scope.food) {
-        var res = $scope.food.split(",");
-        $scope.message = res.length>3 ? "Too much!" : "Enjoy!";
-      } else {
-        $scope.message = "Please enter data first";
-      }
+      
     };
   }
 
   AlreadyBoughtController.$inject = ['$scope', 'ShoppingListCheckOffService'];
   function AlreadyBoughtController($scope, ShoppingListCheckOffService) {
-    
+    $scope.bought = ShoppingListCheckOffService.bought;
+
+    $scope.checkLunch = function () {
+      
+    };
   }
 
   function ShoppingListCheckOffService() {
