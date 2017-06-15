@@ -10,8 +10,8 @@
   function ToBuyController($scope, ShoppingListCheckOffService) {
     $scope.to_buy = ShoppingListCheckOffService.to_buy;
 
-    $scope.checkLunch = function () {
-      
+    $scope.buy_item = function ($index) {
+      ShoppingListCheckOffService.buy_item($index);
     };
   }
 
@@ -36,15 +36,9 @@
     ];
     service.bought = [];
 
-    // List of shopping items
-    var items = [];
-
-    service.addItem = function (itemName, quantity) {
-      var item = {
-        name: itemName,
-        quantity: quantity
-      };
-      items.push(item);
+    service.buy_item = function ($index) {
+      service.bought.push(service.to_buy[$index]);
+      service.to_buy.splice($index);
     };
 
     service.removeItem = function (itemIdex) {

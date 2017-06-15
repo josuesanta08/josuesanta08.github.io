@@ -34,7 +34,7 @@
     <div class="col-md-6" ng-controller="ToBuyController">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in to_buy">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in to_buy track_by $index">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="buy_item($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      <div ng-if="!to_buy.length" class="emptyMessage">Everything is bought!</div>
     </div>
@@ -44,7 +44,6 @@
      <h2>Already Bought:</h2>
      <ul>
        <li ng-repeat="item in bought">Buy {{item.quantity}} {{item.name}}</li>
-       <li>Bought 10 cookies</li>
      </ul>
      <div ng-if="bought.length" class="emptyMessage">Nothing bought yet.</div>
     </div>
