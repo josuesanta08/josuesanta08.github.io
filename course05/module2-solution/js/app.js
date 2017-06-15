@@ -38,15 +38,7 @@
 
     service.buy_item = function ($index) {
       service.bought.push(service.to_buy[$index]);
-      service.to_buy.splice($index);
-    };
-
-    service.removeItem = function (itemIdex) {
-      items.splice(itemIdex, 1);
-    };
-
-    service.getItems = function () {
-      return items;
+      service.to_buy.splice($index, 1);
     };
   }
 })();
