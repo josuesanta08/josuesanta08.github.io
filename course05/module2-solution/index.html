@@ -31,21 +31,21 @@
   <div class="row">
 
     <!-- To Buy List -->
-    <div class="col-md-6" ng-controller="ToBuyController">
+    <div class="col-md-6" ng-controller="ToBuyController as ToBuy">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in to_buy track by $index">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="buy_item($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in ToBuy.to_buy track by $index">Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="buy_item($index)"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div ng-if="!to_buy.length" class="emptyMessage">Everything is bought!</div>
+     <div ng-if="!ToBuy.to_buy.length" class="emptyMessage">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
-    <div class="col-md-6" ng-controller="AlreadyBoughtController">
+    <div class="col-md-6" ng-controller="AlreadyBoughtController as Bought">
      <h2>Already Bought:</h2>
      <ul>
-       <li ng-repeat="item in bought">Buy {{item.quantity}} {{item.name}}</li>
+       <li ng-repeat="item in Bought.bought">Buy {{item.quantity}} {{item.name}}</li>
      </ul>
-     <div ng-if="!bought.length" class="emptyMessage">Nothing bought yet.</div>
+     <div ng-if="!Bought.bought.length" class="emptyMessage">Nothing bought yet.</div>
     </div>
   </div>
 </div>
