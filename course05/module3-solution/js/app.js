@@ -23,6 +23,10 @@
 
   function FoundItemsDirectiveController() {
     var list = this;
+
+    list.$watch('items', function(newValue, oldValue) {
+      console.log(newValue);
+    });
   }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
