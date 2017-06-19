@@ -10,7 +10,7 @@
     var ddo = {
       templateUrl: 'templates/itemsList.html',
       scope: {
-        items: '=items',
+        found: '<',
         onRemove: '&'
       },
       controller: FoundItemsDirectiveController,
@@ -23,10 +23,6 @@
 
   function FoundItemsDirectiveController() {
     var list = this;
-
-    list.$watch('items', function(newValue, oldValue) {
-      console.log(newValue);
-    });
   }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
