@@ -29,7 +29,7 @@
   function NarrowItDownController(MenuSearchService) {
     var NarrowItDown = this;
 
-    var NarrowItDown.found = [];
+    NarrowItDown.found = [];
 
     NarrowItDown.search = function() {
       NarrowItDown.found = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm);
