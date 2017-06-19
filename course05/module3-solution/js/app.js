@@ -32,7 +32,7 @@
     NarrowItDown.found = [];
 
     NarrowItDown.search = function() {
-      var promise = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm).then;
+      var promise = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm);
       promise.then(function (data) {
         NarrowItDown.found = data;
       })
