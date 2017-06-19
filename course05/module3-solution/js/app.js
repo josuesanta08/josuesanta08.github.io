@@ -33,6 +33,7 @@
 
     NarrowItDown.search = function() {
       NarrowItDown.found = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm);
+      console.log(NarrowItDown.found);
     }
 
     NarrowItDown.removeItem = function ($index) {
