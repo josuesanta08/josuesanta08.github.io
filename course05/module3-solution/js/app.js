@@ -4,16 +4,16 @@
   angular.module('NarrowItDownApp', [])
   .controller('NarrowItDownController', NarrowItDownController)
   .service('MenuSearchService', MenuSearchService)
-  .directive('itemsList', ItemsList);
+  .directive('foundItems', FoundItems);
 
-  function ItemsList() {
+  function FoundItems() {
     var ddo = {
       templateUrl: '../templates/itemsList.html',
       scope: {
-        list: '<foundItems',
+        list: '=foundItems',
         onRemove: '&'
       },
-      controller: ItemsListDirectiveController,
+      controller: FoundItemsDirectiveController,
       controllerAs: 'list',
       bindToController: true
     };
@@ -21,7 +21,7 @@
     return ddo;
   }
 
-  function ItemsListDirectiveController() {
+  function FoundItemsDirectiveController() {
     var list = this;
   }
 
