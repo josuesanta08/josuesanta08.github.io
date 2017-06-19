@@ -17,7 +17,7 @@
   function MenuSearchService() {
     var service = this;
 
-    var getMatchedMenuItems = function (searchTerm) {
+    service.getMatchedMenuItems = function (searchTerm) {
       return $http({
         url: "https://davids-restaurant.herokuapp.com/menu_items.json"
       }).then(function (result) {
