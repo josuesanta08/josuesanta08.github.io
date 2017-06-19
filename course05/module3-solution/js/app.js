@@ -46,8 +46,7 @@
     var service = this;
 
     service.getMatchedMenuItems = function (searchTerm) {
-      var deferred = $q.defer();
-      $http({
+      return $http({
         url: "https://davids-restaurant.herokuapp.com/menu_items.json"
       }).then(function (result) {
         // process result and only keep items that match
@@ -57,12 +56,8 @@
         });
 
         // return processed items
-        deferred.resolve(foundItems);
-      }, function (error) {
-        console.log("Error " + error);
-        deferred.reject(error);
+        return foundItems;
       });
-      return deferred.promise;
     };
   }
 })();
