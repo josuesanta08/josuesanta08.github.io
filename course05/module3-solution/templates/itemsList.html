@@ -1,8 +1,18 @@
 <div class="col-xs-12">
-	<ol>
+	<ul>
 	  <li ng-repeat="item in list.found">
-	    {{ item.name }} of {{ item.description }}
-	    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+	  	<div class="col-sm-3">
+	    	{{ item.name }}
+    	</div>
+    	<div class="col-sm-3">
+    		{{ item.short_name }}
+		</div>
+		<div class="col-sm-3">
+			{{ item.description }}
+		</div>
+	    <div class="col-sm-3">
+	    	<button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    	</div>
 	  </li>
-	</ol>
+	</ul>
 </div>
