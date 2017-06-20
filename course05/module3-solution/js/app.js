@@ -37,7 +37,7 @@
       var promise = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm);
       promise.then(function (data) {
         NarrowItDown.found = data;
-        NarrowItDown.hasItems = NarrowItDown.length ? true : false;
+        NarrowItDown.hasItems = NarrowItDown.found.length ? true : false;
       })
       .catch(function (error) {
         console.log(error);
