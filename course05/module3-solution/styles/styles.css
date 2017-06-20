@@ -56,4 +56,5 @@ input[type="text"] {
 .table-row {
   display: flex;
   align-items: center;
+  padding: 5px 0;
 }
