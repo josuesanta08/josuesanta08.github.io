@@ -51,5 +51,9 @@ input[type="text"] {
   }
 }
 .odd {
-  background-color: gray;
+  background-color: #EEE;
+}
+.table-row {
+  display: flex;
+  align-items: center;
 }
