@@ -11,7 +11,8 @@
       templateUrl: 'templates/itemsList.html',
       scope: {
         found: '<',
-        onRemove: '&'
+        onRemove: '&',
+        hasItems: '<'
       },
       controller: FoundItemsDirectiveController,
       controllerAs: 'list',
@@ -29,17 +30,18 @@
   function NarrowItDownController(MenuSearchService) {
     var NarrowItDown = this;
 
+    NarrowItDown.hasItems = true;
     NarrowItDown.found = [];
 
     NarrowItDown.search = function() {
       var promise = MenuSearchService.getMatchedMenuItems(NarrowItDown.searchTerm);
       promise.then(function (data) {
         NarrowItDown.found = data;
+        NarrowItDown.hasItems = NarrowItDown.length ? true : false;
       })
       .catch(function (error) {
         console.log(error);
       });
-      console.log(NarrowItDown.found);
     }
 
     NarrowItDown.removeItem = function ($index) {

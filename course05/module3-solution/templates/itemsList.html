@@ -1,4 +1,4 @@
-<div ng-if="list.found.length">
+<div ng-if="list.hasItems">
 	<div class="col-xs-12">
 	  	<div class="col-sm-3">
 	    	Name
@@ -28,6 +28,6 @@
 		</div>
 	</div>
 </div>
-<div class="col-xs-12" ng-if="!list.found.length" class="text-center">
+<div class="col-xs-12" ng-if="!list.hasItems" class="text-center">
 	<span>Nothing found</span>
 </div>
