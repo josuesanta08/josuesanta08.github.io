@@ -1,18 +1,4 @@
 <div ng-if="list.hasItems">
-	<div class="col-xs-12">
-	  	<div class="col-sm-3">
-	    	Name
-		</div>
-		<div class="col-sm-3">
-			Short Name
-		</div>
-		<div class="col-sm-3">
-			Description
-		</div>
-	    <div class="col-sm-3">
-	    	Action
-		</div>
-	</div>
 	<div class="col-xs-12" ng-repeat="item in list.found" ng-class="'table-row'" ng-class-odd="'odd'">
 	  	<div class="col-sm-3">
 	    	{{ item.name }}
