@@ -26,3 +26,6 @@
     	<button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
 	</div>
 </div>
+<div class="col-xs-12" ng-if="!list.found.length">
+	<span>Nothing found</span>
+</div>
