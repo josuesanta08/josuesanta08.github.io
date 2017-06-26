@@ -54,6 +54,9 @@
     var service = this;
 
     service.getMatchedMenuItems = function (searchTerm) {
+      if (searchTerm === "") {
+        searchTerm = null;
+      }
       var deferred = $q.defer();
       $http({
         url: "https://davids-restaurant.herokuapp.com/menu_items.json"
