@@ -7,7 +7,13 @@
   CategoriesController.$inject = ['MenuDataService'];
   function CategoriesController(MenuDataService) {
   	var categoriesList = this;
-  	categoriesList.categories = MenuDataService.getAllCategories;
+  	MenuDataService.getAllCategories()
+  	.then(function (data) {
+        categoriesList.categories = data;
+	})
+	.catch(function (error) {
+		console.log(error);
+	});
   }
 
 })();
