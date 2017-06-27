@@ -31,7 +31,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('items', {
     url: '/items/{itemId}',
     templateUrl: 'src/items/templates/items.template.html',
-    controller: 'ItemsController as itemsList'
+    controller: 'ItemsController as itemsList',
+    resolve: {
+      items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
+        return MenuDataService.getItemsForCategory($stateParams.itemId);
+      }]
+    }
   });
 }
 
