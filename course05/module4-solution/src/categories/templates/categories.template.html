@@ -1,8 +1,11 @@
-<div clas="col-xs-12">
+<div class="col-sm-4">
 	<h1>Categories</h1>
 	<ul>
 		<li ng-repeat="categorie in categoriesList.categories">
-			<a ui-sref="items({itemId: categorie.short_name})">{{ categorie.name }}</a>
+			<a ui-sref="categories.items({itemId: categorie.short_name})">{{ categorie.name }}</a>
 		</li>
 	</ul>
+</div>
+<div class="col-sm-8">
+	<ui-view></ui-view>
 </div>
