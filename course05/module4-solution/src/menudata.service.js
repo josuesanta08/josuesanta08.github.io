@@ -19,7 +19,7 @@
     };
 
     service.getItemsForCategory = function (categoryShortName) {
-      url = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName;
+      var url = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName;
       return $http({
         url: url
       }).then(function (result) {
