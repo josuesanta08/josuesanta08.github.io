@@ -4,16 +4,10 @@
   angular.module('MenuApp')
   .controller('CategoriesController', CategoriesController);
 
-  CategoriesController.$inject = ['MenuDataService'];
-  function CategoriesController(MenuDataService) {
+  CategoriesController.$inject = ['MenuDataService', 'categories'];
+  function CategoriesController(MenuDataService, categories) {
   	var categoriesList = this;
-  	MenuDataService.getAllCategories()
-  	.then(function (data) {
-        categoriesList.categories = data;
-  	})
-  	.catch(function (error) {
-  		console.log(error);
-  	});
+  	categoriesList.categories = categories;
   }
 
 })();
