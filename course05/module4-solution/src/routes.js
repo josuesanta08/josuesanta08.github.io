@@ -22,12 +22,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     url: '/categories',
     templateUrl: 'src/categories/templates/categories.template.html',
     controller: 'CategoriesController as categoriesList'
+  })
+  .state('items', {
+    url: '/items/{itemId}',
+    templateUrl: 'src/items/templates/items.template.html',
+    controller: 'ItemsController as itemsList'
   });
-  /*.state('items', {
-    url: '/main-list',
-    templateUrl: 'src/shoppinglist/templates/main-shoppinglist.template.html',
-    controller: 'MainShoppingListController as mainList'
-  });*/
 }
 
 })();

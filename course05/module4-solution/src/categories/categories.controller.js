@@ -10,10 +10,10 @@
   	MenuDataService.getAllCategories()
   	.then(function (data) {
         categoriesList.categories = data;
-	})
-	.catch(function (error) {
-		console.log(error);
-	});
+  	})
+  	.catch(function (error) {
+  		console.log(error);
+  	});
   }
 
 })();

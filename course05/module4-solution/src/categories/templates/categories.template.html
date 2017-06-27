@@ -1,6 +1,8 @@
 <div clas="col-xs-12">
 	<h1>Categories</h1>
 	<ul>
-		<li ng-repeat="categorie in categoriesList.categories">{{ categorie.name }}</li>
+		<li ng-repeat="categorie in categoriesList.categories">
+			<a ui-sref="items({itemId: categorie.short_name})">{{ categorie.name }}</a>
+		</li>
 	</ul>
 </div>
