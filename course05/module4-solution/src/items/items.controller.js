@@ -12,7 +12,6 @@
   	MenuDataService.getItemsForCategory($stateParams.itemId)
   	.then(function (data) {
         itemsList.items = data;
-        console.log(itemsList.items);
   	})
   	.catch(function (error) {
   		console.log(error);
